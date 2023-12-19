@@ -15,7 +15,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://*.com/*"],
+            "matches": ["https://urs.kaist.ac.kr/*"],
             "js": ["content_script.js"]
         }
     ]

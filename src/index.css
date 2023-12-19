@@ -1,0 +1,16 @@
+body, html {
+    background: #222222;
+    height: 100%;
+    width: 100%;
+
+    /* Disable scroll */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NanumGothic', sans-serif;
+}
