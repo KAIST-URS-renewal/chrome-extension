@@ -3,9 +3,7 @@
     "description": "improve UI/UX and speed of URS",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": [
-        "storage"
-    ],
+    "permissions": ["storage"],
     "action": {
         "default_title": "Settings",
         "default_popup": "popup.html"
