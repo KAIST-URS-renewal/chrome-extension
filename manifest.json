@@ -1,0 +1,22 @@
+{
+    "name": "KAIST URS renewal",
+    "description": "improve UI/UX and speed of URS",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "storage"
+    ],
+    "action": {
+        "default_title": "Settings",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.com/*"],
+            "js": ["content_script.js"]
+        }
+    ]
+}
