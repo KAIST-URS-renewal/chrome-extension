@@ -8,7 +8,8 @@
         "build": "webpack --config webpack.prod.js",
         "dev": "webpack --config webpack.dev.js",
         "clean": "rm -rf ./dist",
-        "prettier": "prettier . --write"
+        "format": "prettier . --write",
+        "prepare": "husky install"
     },
     "keywords": [],
     "author": "",
@@ -21,6 +22,7 @@
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.8.1",
         "html-loader": "^4.2.0",
+        "husky": "^8.0.0",
         "prettier": "^3.1.1",
         "sass-loader": "^13.3.2",
         "style-loader": "^3.3.3",
