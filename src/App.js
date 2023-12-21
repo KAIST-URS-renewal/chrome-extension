@@ -11,6 +11,14 @@ const App = () => {
                     path="/urs/cmn/ath/lgn/CmnAthLgn001M01.do"
                     element={<LoginPage />}
                 />
+                <Route
+                    path="/urs/cmn/ath/lgn/CmnAthLgn001M02.do"
+                    element={<LoginPage />}
+                />
+                <Route
+                    path="/urs/cmn/ath/lgn/CmnAthLgn001M03.do"
+                    element={<LoginPage />}
+                />
             </Routes>
         </BrowserRouter>
     );

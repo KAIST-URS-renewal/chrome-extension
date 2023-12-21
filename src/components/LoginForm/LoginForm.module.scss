@@ -1,0 +1,23 @@
+@import 'src/styles';
+
+.subtitle {
+    font-size: 25px;
+    font-weight: 800;
+    color: $white;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+}
+
+#ssoBtn {
+    background: $purple;
+    display: inline-block;
+    a {
+        font-size: 25px;
+        font-weight: 800;
+        color: $white;
+    }
+}

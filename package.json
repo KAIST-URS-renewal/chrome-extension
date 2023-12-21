@@ -12,7 +12,9 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "*": ["pnpm format"]
+        "*": [
+            "pnpm format"
+        ]
     },
     "keywords": [],
     "author": "",
@@ -39,6 +41,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.21.0",
-        "sass": "^1.69.5"
+        "sass": "^1.69.5",
+        "superagent": "^8.1.2"
     }
 }
