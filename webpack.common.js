@@ -27,16 +27,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'swc-loader',
-                    options: {
-                        parseMap: true,
-                    },
-                },
-            },
-            {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 use: {
