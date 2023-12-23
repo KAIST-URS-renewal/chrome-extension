@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { getFacility, getMyReservation } from 'src/data/urs';
+import { getFacility, getMyReservation, getUserInfo } from 'src/data/urs';
+import {} from 'src/data/urs';
 
 export const HomePage = () => {
     useEffect(() => {
         const helper = async () => {
-            await getMyReservation();
+            await getUserInfo();
         };
         helper();
     }, []);
