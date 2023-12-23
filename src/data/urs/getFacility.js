@@ -90,7 +90,7 @@ const parseFacilityHtml = (res) => {
 };
 
 export const getFacility = async () => {
-    const start = Date.now();
+    //const start = Date.now();
 
     // fetch all htmls asynchronously
     const htmls = await Promise.all(
@@ -107,9 +107,9 @@ export const getFacility = async () => {
         })
     );
 
-    console.log(facilityInfo);
-    const end = Date.now();
-    console.log(`Execution time of getFacility: ${end - start} ms`);
+    //console.log(facilityInfo);
+    //const end = Date.now();
+    //console.log(`Execution time of getFacility: ${end - start} ms`);
 
-    return;
+    return facilityInfo;
 };
