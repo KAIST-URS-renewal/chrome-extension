@@ -21,7 +21,7 @@ const getFacilityHtml = async (idx) => {
 const parseFacilityHtml = (res) => {
     if (!res) {
         console.error('Invalid input for parse Facility Html function.');
-        return null;
+        return new Array();
     }
     const root = HTMLParser.parse(res).removeWhitespace();
 
@@ -36,6 +36,7 @@ const parseFacilityHtml = (res) => {
         // console.log(value.querySelector("p > a").text)
         // get facility name
         const facilityName = value.querySelector('p > a').text;
+
         // console.log(`facilityName: ${facilityName}`)
 
         // get facility id
@@ -43,6 +44,14 @@ const parseFacilityHtml = (res) => {
             .querySelector('p > a')
             .getAttribute('href');
         const facilityId = _.split(facilityRegisterUrl, 'prgrId=')[1];
+
+        // if facilityId is undefined, then it means it is libit resource.
+        // skip for libit resource for now
+        if (!facilityId) {
+            // skip libit resource
+            return;
+        }
+
         //console.log(`facilityurl: ${facilityRegisterUrl}`)
         // console.log(`facilityId: ${facilityId}`);
 
@@ -90,7 +99,7 @@ const parseFacilityHtml = (res) => {
 };
 
 export const getFacility = async () => {
-    //const start = Date.now();
+    const start = Date.now();
 
     // fetch all htmls asynchronously
     const htmls = await Promise.all(
@@ -107,9 +116,9 @@ export const getFacility = async () => {
         })
     );
 
-    //console.log(facilityInfo);
-    //const end = Date.now();
-    //console.log(`Execution time of getFacility: ${end - start} ms`);
+    console.log(facilityInfo);
+    const end = Date.now();
+    console.log(`Execution time of getFacility: ${end - start} ms`);
 
     return facilityInfo;
 };
