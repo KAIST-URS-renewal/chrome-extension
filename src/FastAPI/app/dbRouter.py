@@ -1,6 +1,5 @@
 from sqlalchemy.orm import sessionmaker
 from fastapi import APIRouter
-from typing import List
 from src.PostgreSQL.postgresql import *
 from src.PostgreSQL.schema import engine
 from src.types.dataTypes import *
@@ -10,10 +9,45 @@ from src.types.dataTypes import *
 Session = sessionmaker(engine)
 
 # define routers
-userRouter = APIRouter(prefix="/user")
 facilityRouter = APIRouter(prefix="/facility")
+resourceRouter = APIRouter(prefix="/resource")
+userRouter = APIRouter(prefix="/user")
 reserveRouter = APIRouter(prefix="/reserve")
 
+
+'''(1) facility Router'''
+
+# register new facility
+@facilityRouter.post("/register", response_model=DefaultOutput)
+def register_facility(infos: RegisterFacilities):
+    db_register_facility(Session, infos)
+    return {"status": 200, "msg": "Insert Success."}
+
+
+# search facilities
+@facilityRouter.get("/search")
+def search_facility(facilityId=None, facilityUsage=None):
+    result = db_query_facility(Session, facilityId, facilityUsage)
+    return result
+
+
+'''(2) resource Router'''
+
+# register new resource
+@resourceRouter.post("/register", response_model=DefaultOutput)
+def register_resource(infos: RegisterResources):
+    db_register_resource(Session, infos)
+    return {"status": 200, "msg": "Insert Success."}
+
+
+# search resources
+@resourceRouter.get("/search")
+def search_resource(resourceId=None, facilityId=None):
+    result = db_query_resource(Session, resourceId, facilityId)
+    return result
+
+
+'''(3) user Router'''
 
 # add new user info
 @userRouter.post("/add", response_model=DefaultOutput)
@@ -22,12 +56,7 @@ def add_user(info: AddUser):
     return {"status": 200, "msg": "Insert Success."}
 
 
-# register new facility
-@facilityRouter.post("/register", response_model=DefaultOutput)
-def register_facility(infos: List(RegisterFacility)):
-    db_register_facility(Session, infos)
-    return {"status": 200, "msg": "Insert Success."}
-
+'''(4) reservation Router'''
 
 # add new reservation
 @reserveRouter.post("/add", response_model=DefaultOutput)

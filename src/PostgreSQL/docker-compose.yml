@@ -1,0 +1,30 @@
+# docker-compose 파일 버전
+version: "3"
+
+# 컨테이너들 설정 내용
+services: 
+  # 서비스 명 (첫 번째 컨테이너)
+  postgresql:
+
+    # 사용할 이미지
+    image: postgres:13
+
+    # 컨테이너명 설정
+    container_name: postgres
+
+    # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
+    ports:
+      - "5432:5432"
+
+    # 환경 변수 설정
+    environment: 
+
+      # PostgreSQL 계정 및 패스워드 설정 옵션
+      POSTGRES_DB: newurs
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      TZ: Asia/Seoul
+
+    # 볼륨 설정 (호스트 도착지:컨테이너 출발지)
+    volumes:
+      - ./data/postgres/:/var/lib/postgresql/data

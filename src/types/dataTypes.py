@@ -3,12 +3,7 @@ from datetime import date
 from pydantic import BaseModel, Field
 
 
-# add new user
-class AddUser(BaseModel):
-    email: str
-    name: str
-    phone: str
-
+'''(1) facility Router'''
 
 # register new facility
 class RegisterFacility(BaseModel):
@@ -21,18 +16,37 @@ class RegisterFacility(BaseModel):
     facilityRegisterDate: date
     resourceInfo: str
 
-'''
-test_data = {
-        "facilityName": "[운영중(Operating)] 의과학연구센터(E7) 하자유욱준홀 (1111호)",
-        "facilityRegisterUrl": "/urs/rsv/app/cmn/RsvAppCmn001M01.do?prgrId=0000000663",
-        "facilityId": "0000000663",
-        "facilityInfo": "의과학연구센터(E7) 하자 유욱준홀(1층 1111호) 예약",
-        "facilityUsage": "행사,회의,세미나,강의",
-        "facilityManager": "김아랑 (042-350-8153) ",
-        "facilityRegisterDate": "2021-07-05",
-        "resourceInfo": "의과학연구센터 하자 유욱준홀(1111호) 외 0건"
-    }
-'''
+class RegisterFacilities(BaseModel):
+    infos: List[RegisterFacility]
+
+
+'''(2) resource Router'''
+
+# register new resource
+class RegisterResource(BaseModel):
+    resourceId: str
+    resourceName: str
+    resourceLocation: str | None
+    resourceBldg: str | None
+    resourceFloor: str | None
+    resourceRoom: str | None
+    resourceCapacity: str | None
+    facilityId: str
+
+class RegisterResources(BaseModel):
+    infos: List[RegisterResource | None]
+
+
+'''(3) user Router'''
+
+# add new user
+class AddUser(BaseModel):
+    email: str
+    name: str
+    phone: str
+
+
+'''(4) reservation Router'''
 
 # add new reservation
 class AddInput(BaseModel):
