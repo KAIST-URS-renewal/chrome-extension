@@ -2,13 +2,9 @@
 
 ## About
 
----
-
 카이스트 URS 서비스 UI/UX 개선 및 캐싱을 위한 Chrome Extension입니다.
 
 ### Table Of Contents
-
----
 
 - [About](#about)
   - [Table Of Contents](#table-of-contents)
