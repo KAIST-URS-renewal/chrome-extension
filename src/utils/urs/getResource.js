@@ -1,4 +1,5 @@
 const superagent = require('superagent');
+let HTMLParser = require('node-html-parser');
 let _ = require('lodash');
 
 const getResourceHtml = async facilityId => {

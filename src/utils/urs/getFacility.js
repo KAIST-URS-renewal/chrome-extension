@@ -114,7 +114,7 @@ export const getFacility = async () => {
 
   //console.log(facilityInfo);
   //const end = Date.now();
-  //console.log(`Execution time of getFacility: ${end - start} ms`);
+  //console.log(`Execution time of facility: ${end - start} ms`);
 
   return facilityInfo;
 };

@@ -93,7 +93,7 @@ $ pnpm run build
 │   ├── data
 │   │   ├── cache
 │   │   └── urs
-│   │       ├── getFacility.js
+│   │       ├── facility.js
 │   │       ├── getMyReservation.js
 │   │       ├── getReservation.js
 │   │       ├── getReservationDetails.js

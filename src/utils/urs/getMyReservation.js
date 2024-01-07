@@ -168,7 +168,7 @@ export const getMyReservation = async () => {
   );
   // console.log(myReservationInfo);
   // const end = Date.now();
-  // console.log(`Execution time of getFacility: ${end - start} ms`);
+  // console.log(`Execution time of facility: ${end - start} ms`);
 
   return myReservationInfo;
 };
