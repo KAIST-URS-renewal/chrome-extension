@@ -4,9 +4,12 @@
   display: flex;
   margin: auto;
   height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .loginItem {
   align-self: center;
-  margin: auto;
+  margin-right: 65px;
 }
