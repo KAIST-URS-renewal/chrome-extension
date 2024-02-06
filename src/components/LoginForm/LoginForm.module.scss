@@ -1,23 +1,72 @@
 @import 'src/styles';
 
 .subtitle {
-    font-size: 25px;
-    font-weight: 800;
-    color: $white;
+  font-size: 25px;
+  font-weight: 800;
+  color: $white;
+  height: 35px;
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+}
+
+.divider {
+  display: inline-block;
+  border: 1px solid #525252;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .label {
-    font-size: 20px;
-    font-weight: 700;
-    color: $white;
+  font-size: 20px;
+  font-weight: 700;
+  color: $white;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.loginBox {
+  width: 340px;
+  text-align: center;
+
+  .form {
+    text-align: left;
+  }
 }
 
 #ssoBtn {
-    background: $purple;
-    display: inline-block;
-    a {
-        font-size: 25px;
-        font-weight: 800;
-        color: $white;
-    }
+  background: $purple;
+  display: inline-block;
+  padding: 20px 15px;
+  border-radius: 3px;
+  a {
+    font-size: 25px;
+    font-weight: 800;
+    color: $white;
+  }
+}
+
+#submitBtn {
+  border: 0;
+  background: $purple;
+  display: inline-block;
+  padding: 10px 8px;
+  border-radius: 3px;
+  font-size: 25px;
+  font-weight: 800;
+  color: $white;
+}
+
+.inputBox {
+  width: 340px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #999999;
+  margin-bottom: 30px;
 }
