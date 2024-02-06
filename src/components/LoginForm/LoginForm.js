@@ -13,15 +13,15 @@ export const LoginForm = () => {
       </div>
       <hr className={style.divider} />
 
-      <div>
+      <div className={style.loginBox}>
         <p className={style.subtitle}>For non-KAIST members</p>
         <form className={style.form}>
           <label className={style.label}>아이디</label>
           <input className={style.inputBox} />
           <label className={style.label}>비밀번호</label>
           <input className={style.inputBox} type="password" />
-          <input id={style.submitBtn} type="submit" value="Login" />
         </form>
+        <input id={style.submitBtn} type="submit" value="Login" />
       </div>
     </div>
   );
